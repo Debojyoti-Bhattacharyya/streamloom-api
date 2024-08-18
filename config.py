@@ -3,7 +3,7 @@ import logging
 
 from dotenv import load_dotenv
 
-# Loan environment variables from the .env file
+# Load environment variables from the .env file
 load_dotenv()
 
 
