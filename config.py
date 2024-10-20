@@ -31,6 +31,7 @@ class Config:
     DISCOVER_MOVIES_ENDPOINT = "https://api.themoviedb.org/3/discover/movie"
     SEARCH_MOVIE_ENDPOINT = "https://api.themoviedb.org/3/search/movie"
     MOVIE_DETAILS_BY_ID_ENDPOINT = "https://api.themoviedb.org/3/movie/"
+    CONFIGURATION_DETAILS_ENDPOINT = "https://api.themoviedb.org/3/configuration"
 
 
 class CustomFormatter(logging.Formatter):
