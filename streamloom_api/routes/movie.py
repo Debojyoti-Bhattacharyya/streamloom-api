@@ -1,10 +1,8 @@
 from flask import Blueprint
-from streamloom_api.views.movie import (
-    discover_all_movies,
-    search_movies_by_name,
-    fetch_movie_by_id,
-    fetch_movie_poster
-)
+
+from streamloom_api.views.movie import (discover_all_movies, fetch_movie_by_id,
+                                        fetch_movie_poster,
+                                        search_movies_by_name)
 
 # Declare the blueprints for different routes, created based on their functionalities
 movie_routes = Blueprint('movie_routes', __name__)
