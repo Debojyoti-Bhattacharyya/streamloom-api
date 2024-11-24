@@ -20,6 +20,7 @@ class Config:
     # External APIs for TV Series
     DISCOVER_TV_SERIES_ENDPOINT = "https://api.themoviedb.org/3/discover/tv"
     SEARCH_TV_SERIES_ENDPOINT = "https://api.themoviedb.org/3/search/tv"
+    SERIES_DETAILS_ID_ENDPOINT = "https://api.themoviedb.org/3/tv/"
 
     # Logging configurations. This used the the CustomFormatter formatter class defined below
     logging_config = {
@@ -48,6 +49,11 @@ class Config:
         'year': None
     }
     
+    SERIES_DETAILS_BY_ID_DEFAULT_PARAMS = {
+        'series_id' : 12345,
+        'append_to_response' : None,
+        'language' : 'en-US'
+    }
 
 class CustomFormatter(logging.Formatter):
 

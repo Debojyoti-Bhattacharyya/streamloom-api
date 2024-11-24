@@ -20,3 +20,17 @@ def search_series_by_name():
     
     return jsonify(ServiceUtils.call_external_api(target_endpoint, access_token, params,
                                                   'tv series related by name'))
+
+
+def fetch_series_by_id():
+    payload = request.get_json()
+    default_params = current_app.config['SERIES_DETAILS_BY_ID_DEFAULT_PARAMS']
+    params = {
+        key: payload.get(key, default_params[key])
+        for key in default_params
+    }
+    access_token = request.headers.get("Authorization")
+    target_endpoint = f"{current_app.config['SERIES_DETAILS_ID_ENDPOINT']}{params.get('series_id')}"
+    logging.info("Process started: Fetching tv series details by ID")
+    logging.info(f"Series details request body: {params}")
+    return jsonify(ServiceUtils.call_external_api(target_endpoint, access_token, params, 'tv series details'))
